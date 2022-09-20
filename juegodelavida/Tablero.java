@@ -46,7 +46,6 @@ public class Tablero {
             }
         } catch (java.lang.ArrayIndexOutOfBoundsException e) {
         }
-        //if(tablero[i][j] == '1')count++;//la casilla en cuestión
         try {
             if (mat[ren][col + 1] == vivo) {
                 vecinosVivos++;
