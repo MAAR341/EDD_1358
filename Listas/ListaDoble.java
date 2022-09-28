@@ -64,16 +64,19 @@ public class ListaDoble<T> {
     public void eliminar(int posicion){
         
         NodoDoble aux = this.head;
+        NodoDoble aux2 = null;
         for (int contador = 1; contador <= posicion - 1; contador++) {
             aux = aux.getSiguiente();
         }
-        
+        aux2 = aux.getSiguiente().getSiguiente();
         aux.setSiguiente(aux.getSiguiente().getSiguiente());
+        aux2.setAnterior(aux);
     }
     
     public void eliminarElPrimero(){
         if(!this.estaVacia()){
             head = head.getSiguiente();
+            this.head.setAnterior(null);
         }else{
             head = null;
         }
